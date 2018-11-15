@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">atmEmpresaConsultoria</string>
+    <string name="empresa_nome">Sobre a empresa</string>
+    <string name="texto_empresa">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing.
+    </string>
+    <string name="Detalhes_servico">Sobre nossos serviços</string>
+    <string name="Clientes">Nossos Clientes</string>
+    <string name="sys">Empresa de desenvolvimento de sistemas</string>
+    <string name="rsm">Empresa de auditoria</string>
+    <string name="Contato">Detalhes de contato</string>
+    <string name="email">Email: consultoria@atm.com.br</string>
+    <string name="telefone">Telefone: (083) 99999 - 9999</string>
+    <string name="celular">Celular: (083) 93333 - 3333</string>
+</resources>

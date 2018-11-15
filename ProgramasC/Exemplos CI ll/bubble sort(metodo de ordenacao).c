@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define ELEMENTOS 1000000
+
+int main() {
+   // Números desordenados
+   int ar[ELEMENTOS] ;
+   int auxiliar, i, repeticao = 1;
+
+   // Aplico o bubble sort para ordenar os valores no vetor
+   while(repeticao)
+    {
+    repeticao = 0;/**então se tudo estiver organizado, o laço poderá acabar*/
+    for ( i = 0; i < ELEMENTOS -1; i++)//ou seja, vai repetir até o penúltimo valor da variável
+        {
+        if (ar[i] > ar[i+1]) //Se a posição anterior for maior que a próxima, troca
+            {
+            auxiliar = ar[i]; /** Auxiliar pega o valor de a*/
+            ar[i] = ar[i+1];  /** aqui A e B ficam iguais*/
+            ar[i+1] = auxiliar; /** Aqui B fica o valor que já estava guardado em A*/
+            printf("\tTroca\n");
+            repeticao = i; /**Ou seja, sempre que em algum lugar do laço, for encontrada, uma posição que não esteja crescente
+                            ** o laço se repetirá, até que ele não venha mais a cair nesse if
+                            */
+            }
+        }
+    }
+
+   // Agora mostra o array organizado
+   printf("Vetor organizado:\n");
+   for (i = 0; i < 10; i++) {
+      printf("%d",ar[i]);
+      if (i < 9) {
+         printf(", ");
+      }
+   }
+   printf("\n");
+}

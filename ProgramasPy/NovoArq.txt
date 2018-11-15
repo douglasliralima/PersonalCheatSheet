@@ -1,0 +1,8 @@
+Hello World
+Sempre da append no que foi escrito anteriomente no arquivo
+Esse
+Foi
+um
+vetor
+de
+strings

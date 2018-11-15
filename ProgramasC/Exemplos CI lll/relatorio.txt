@@ -1,0 +1,10 @@
+Houveram 2 registro do tipo: 123
+
+A porcentagem dessa registro e' de 66.00 porcento
+
+registro[1]
+-->Descricao: 123
+-->Coordenadas: 1,1
+registro[3]
+-->Descricao: 123
+-->Coordenadas: 1,1
