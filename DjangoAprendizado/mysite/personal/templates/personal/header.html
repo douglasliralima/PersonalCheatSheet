@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Douglas Lima</title>
+	<meta charset="utf-8" />
+	{% load staticfiles %}
+	<!--Em cima nos fizemos o from das bibliotecas, agora vamos fazer o import, especificando o tipo-->
+	<link rel="stylesheet" href="{% static 'personal/css/bootstrap.min.css' %}" type = "text/css"/>
+	<!--Deixa a tela resizible para ser mobile friedly-->
+	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
+	
+	<!--Isso define o tamanho da página que será útil para o rodape-->
+	<style type="text/css">
+		html,
+		body {
+		  height:100%
+		}
+	</style>
+</head>
+
+<body class="body" style="background-color:#f6f6f6">
+	<!--Criamos o container-fluid para colocar nossos elementos pois ele é mobile friendly-->
+	<div class="container-fluid" style="min-height:95%; ">
+		<!--Aqui nos falamos em que parte do grid(matriz) da página o conteúdo vai aparecer, basicamente definimos as colunas da primeira linha aqui-->
+		<!--Mais informações: https://getbootstrap.com/docs/4.0/layout/grid/-->
+		<div class="row">
+			  <div class="col-sm-2">
+				  <br>
+				  <center>
+					<img src="{% static 'personal/img/profile.jpg' %}" class="responsive-img" style='max-height:100px;' alt="face">
+				  </center>
+			  </div>
+			  <div class="col-sm-10">
+				  <br>
+				  <center>
+				  <h3>Programming, Teaching, Entrepreneurship</h3>
+				  </center>
+			  </div>
+		</div><hr>
+
+		<div class="row">
+		  <div class="col-sm-2">
+		  <br>
+
+		  <br>
+		  <!--Aqui nos settamos algumas opções de navegação do bootstrap-->
+		   <!-- Great, til you resize. -->
+			<!--<div class="well bs-sidebar affix" id="sidebar" style="background-color:#fff">-->
+			<!--Isso aqui faz aquelas opções básicas de navegação-->
+			<div class="well bs-sidebar" id="sidebar" style="background-color:#fff">
+				<nav class="nav flex-column">
+		          <a class="nav-link active" href="/">Home</a>
+		          <a class="nav-link" href="/Blog/">Blog</a>
+		          <a class="nav-link" href="/Contact/">Contact</a>
+          		</nav>
+			</div> <!--well bs-sidebar affix-->
+		  </div> <!--col-sm-2-->
+		  <div class="col-sm-10">
+		  
+			<div class='container-fluid'>
+			<br><br>
+				<!--Essa parte é de fato o jinja e vai ser implementado em outro arquivo, isso é como se fosse apenas a interface que pode ser preenchida com qualquer outro template-->
+			   {% block content %}
+			   {% endblock %}	
+			</div>
+		  </div>
+		</div> 
+	</div>
+
+	<!--Define o rodapé do site, ele continua enquanto não ficar encima de outra div-->
+	<footer>
+		<div class="container-fluid" style='margin-left:15px'>
+			<p><a href="#" target="blank">Contact</a> | <a href="#" target="blank">LinkedIn</a> | <a href="#" target="blank">Twitter</a> | <a href="#" target="blank">Google+</a></p>
+		</div>
+	</footer>	
+	
+</body>
+
+</html>

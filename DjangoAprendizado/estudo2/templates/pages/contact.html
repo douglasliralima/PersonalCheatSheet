@@ -1,0 +1,27 @@
+{%extends "pages/base.html"%}
+
+{%block content%}
+<h1>Hello World in HTML</h1>
+
+<p>Hi! My name is Douglas, welcome, to my world</p>
+{%endblock%}
+
+{%block only_contact%}
+<p>This is my number: {{meu_numero}}</p>
+<p>Call My maybe: douglasliralima@gmail.com</p>
+
+<ul>
+{% for i in lista %}
+	{% if i == 1 %}
+	<li>{{forloop.counter}} - Foi no if com {{i}}</li>
+	{%elif i == 2 %}
+	<li>{{forloop.counter}} - Foi no elif com {{i}}</li>
+	{% else %}
+	<li>{{forloop.counter}} - Foi no elif com {{i}}</li>
+	<li> Realização da soma: 1 + 3 = {{i|add:1}}</li>
+	{%endif%}
+{% endfor %}
+</ul>
+
+
+{%endblock%}

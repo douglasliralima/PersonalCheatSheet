@@ -1,0 +1,8 @@
+<!--A partir de templates, a gente fala o que vai estender -->
+{% extends "personal/header.html"%}
+
+<!-- Veja, conseguimos pegar todo o head e agora só precisamos implementar um body diferente para essa página ou outro para a outra, reaproveitando código-->
+{% block content %}
+<p>Olá essa é apenas uma página de teste, não se preocupe com seu conteúdo, mas sobre mim, eu sou um bom programador :)</p>
+{% include "personal/include/snippet.html"%}
+{% endblock %}

@@ -1,0 +1,8 @@
+{%extends 'product/base.html' %}
+
+{% block content %}
+<h3>Product Template: {{obj.title}}</h3>
+<h3>{%if obj.description != ""%}{{obj.description}}{% else %}Em breve{%endif%}</h3>
+<h3>{{obj.price}}</h3>
+<h3>{{obj.summary}}</h3>
+{% endblock %}

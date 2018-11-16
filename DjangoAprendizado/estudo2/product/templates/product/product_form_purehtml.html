@@ -1,0 +1,9 @@
+{%extends 'product/base.html' %}
+
+{% block content %}
+	<p>Pure HTML</p>
+<form action="." method = "POST">{% csrf_token %}
+	<input type="text" name="title" placeholder="Digite o Texto">
+	<input type="submit" value="Save">
+</form>
+{% endblock %}
