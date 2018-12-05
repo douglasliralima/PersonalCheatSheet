@@ -1,0 +1,59 @@
+#lang racket
+;;1 & 2)Criação da variável 'a' e 'b' com valor 42 e 14
+(define a 42)
+(define b 14)
+
+;;3 ) Escrita das expressões
+;;Soma
+(+ a b)
+;;Subtração
+(- a b)
+;;Soma e multiplicação
+(+ a ( * 3 b ) 7)
+;;Média Aritmética
+(/ (+ a b) 2)
+;;Média Geométrica
+(sqrt ( * a b) )
+;;Média Harmônica
+(/ 2 (+ (/ 1 a) (/ 1 b)))
+
+;;4 ) Soma das médias
+(define soma-médias (+ (/ (+ a b) 2)(/ 2 (+ (/ 1 a) (/ 1 b)))))
+;;5 ) Condicional sucesso/falha
+(if (= soma-médias 49) "teste 1 ok" "teste 2 falhou")
+
+;;6 ) Criação da função quadrado
+(define (quadrado x) (* x x))
+
+;;7 ) Funções delta e raiz-positiva
+(define (delta a b c)
+  (- (quadrado b) (* 4 a c))
+  )
+
+(define (raiz-positiva a b c)
+  (/ (+ (- b) (sqrt (delta a b c)))
+     (* 2 a)))
+
+;8 ) Função potência
+;;x - Um número qualquer y - Um número inteiro maior ou igual a zero
+;;Não tem retorno, veja que ele os mostra pelas setas
+(define (potencia x y)
+  (if(> y 0)
+     (if (= y 1)
+         x
+         (* x (potencia x (- y 1)))
+         )
+      (/ 1 (if (= y 1)
+               x
+               (* x (potencia x (-(* y -1) 1)))))
+     )
+  )
+
+;;Teste
+"Testes de potenciação:"
+(potencia 2 2)
+(potencia 2 3)
+(potencia 2 4)
+(potencia 2 -2)
+(potencia 2 -3)
+(potencia 2 -4)
