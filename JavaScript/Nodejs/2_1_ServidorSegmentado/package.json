@@ -1,0 +1,21 @@
+{
+  "name": "2_1_ServidorSegmentado",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "2_1_ServidorSegmentado": "server.js"
+  },
+  "scripts": {
+    "start": "node ./bin/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "debug": "^4.1.1",
+    "express": "^4.16.4",
+    "http": "0.0.0"
+  }
+}

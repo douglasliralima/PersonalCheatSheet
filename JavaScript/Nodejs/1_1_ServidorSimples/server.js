@@ -59,7 +59,7 @@ app.set('port', port);
 
 //Depois precisamos inicializar o nosso servidor baseado na app que criamos acima
 const server = http.createServer(app);
-//Fazemos uma variável rotadora, ela que dado o uso de uma URL em um navegador, chegem na gente
+//Fazemos uma variável rotadora, ela que dado o uso de uma URL em um navegador, chegam na gente
 const router = express.Router();
 
 /*
@@ -76,6 +76,7 @@ const route = router.get('/', (req, res, next) => {
         version : "0.0.1"
     });
 });
+
 //Pronto, com a rota inicializada acima podemos settar ela na nossa aplicação
 app.use('/', route);
 
