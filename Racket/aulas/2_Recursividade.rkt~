@@ -66,24 +66,11 @@
   (test-equal? "1 * 13" (mult 1 13) 13)
   )
 
-;; -----------------------LISTAS-----------------------------------------
-
-;;Vamos agora criar listas, listas só tem duas caracteristicas
+;;Vamos agora para listas, listas só tem duas caracteristicas
 '()                                     ;listas vazias
 '(cons 1 '())
 (define lista1 (list 1))           ;(1)
 (define lista2 (list 2 1))         ;(2, 1)
-
-;;Operações
-
-;;A função cons faz a concatenação de dois elementos, listas ou não, em uma lista
-(define lista3 (cons 2 (cons 1 '())))  ; lista (2 1)
-
-;;A função first pega basicamente o primeiro elemento da lista, basicamente um desempilha
-(first '(1 2 3 4 5 6 7 8 9 10)) ;;1
-
-;;A função rest pega o resto da lista após o primeiro elemento
-(rest '(1 2 3 4 5 6 7 8 9 10)) ;;'(2 3 4 5 6 7 8 9 10)
 
 (define-test-suite testes-listas
   (test-equal? "Lista 1" lista1 '(1))
