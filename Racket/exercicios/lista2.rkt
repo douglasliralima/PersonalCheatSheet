@@ -153,7 +153,7 @@
   (test-equal? "produto de vários números"         (mult-lista (list 1 2 3 4 5))     120)
   (test-equal? "produto de números em outra ordem" (mult-lista (list 2 5 1 4 3))     120))
 
-;; --- Exercício 10 --------------------POR AQUI TÁ ERRADO D:
+;; --- Exercício 10 --------------------
 
 ;; Crie uma função recursiva max-lista (abaixo) que, dada uma lista de números naturais,
 ;; calcula o maior número entre os presentes na lista. Use (max-lista '()) = 0.
@@ -169,10 +169,6 @@
           (first l)
           (first(retorna-lista (max-lista (rest l)))))))
 
-;;(if(> (first l) (max-lista (rest l)))
-;;(first l)
-;;(first(rest l)))
-
 (define-test-suite testes-max-lista
   (test-equal? "maximo da lista vazia"       (max-lista '())                     0)
   (test-equal? "maximo de lista unitaria"    (max-lista '(22))                   22)
@@ -186,11 +182,14 @@
 ;; números ou outros tipos de elementos) e um número n, retorna o n-ésimo
 ;; elemento da lista, contando a partir de zero. Se n é maior ou igual ao
 ;; tamanho da lista, a função deve retornar #f (veja os testes para exemplos
+  
 (define (elemento-n lista n)
-  (if (> n (length lista))
+  (if (or (> n (length lista)) (equal? lista '()))
       #f
-      (if (> n ()  ;; usando '() ao inves de #f pois #f é um valor de retorno válido
-
+      (if (equal? n 0)
+          (first lista)
+          (elemento-n (rest lista) (sub1 n)))))  ;; usando '() ao inves de #f pois #f é um valor de retorno válido
+  
 (define-test-suite testes-elemento-n
   (test-equal? "elemento de lista vazia" (elemento-n '() 0)                #f)
   (test-equal? "elemento 0"              (elemento-n (list 1 2 3 4 5) 0)    1)
@@ -198,17 +197,55 @@
   (test-equal? "ultimo elemento"         (elemento-n (list 1 2 3 4 5) 4)    5)
   (test-equal? "indice fora da lista"    (elemento-n (list 1 2 3 4 5) 7)    #f))
 
+;; --- Exercício 12 --------------------
+
+;; Muitas vezes precisamos transformar os elementos de uma lista da mesma
+;; maneira. Escreva a função quadrado-lista (abaixo) que, dada uma lista de
+;; números, obtém uma lista contendo o quadrado de cada número da lista
+;; original (nas mesmas posições)
+
+(define (quadrado-lista l)
+  (cond [(equal? l '()) '()]
+        [else (cons ( * (first l) (first l)) (quadrado-lista (rest l)))]))
+
+(define-test-suite testes-quadrado-lista
+  (test-equal? "quadrado da lista vazia"  (quadrado-lista '())        '())
+  (test-equal? "quadrado de um número"    (quadrado-lista '(5))       '(25))
+  (test-equal? "quadrado de números"
+               (quadrado-lista (list 2 5 12 25))
+               (list 4 25 144 625)))
+
+;; --- Exercício 13 --------------------
+
+;; Agora vamos selecionar itens em uma lista. Crie uma função filtra-par (abaixo)
+;; que, dado uma lista de números naturais, retorna uma outra lista contendo apenas
+;; os números pares da lista original. Use a função par definida no exercício 3
+(define (filtra-par l)
+  (cond [(equal? l '()) '()]
+        [(par (first l)) (cons (first l) (filtra-par (rest l)))]
+        [else (filtra-par (rest l))]))
+
+(define-test-suite testes-filtra-par
+  (test-equal? "filtragem da lista vazia"     (filtra-par '())                  '())
+  (test-equal? "filtragem de lista sem pares" (filtra-par (list 1 3 5 7 9))     '())
+  (test-equal? "filtragem de lista com pares" (filtra-par (list 1 2 3 4 5))     (list 2 4))
+  (test-equal? "filtragem com todos os itens pares"
+               (filtra-par (list 2 4 22 144))
+               (list 2 4 22 144)))
+
 ;; --- Executa todos os testes ---------
 (run-tests
  (test-suite "todos os testes"
              testes-mult
              testes-sub
              testes-par-impar
+             teste-ex4
              teste-ex5
              teste-ex6
              testes-terceiro-elemento
              testes-soma-lista
              testes-mult-lista
              testes-max-lista
-             testes-elemento-n))
-
+             testes-elemento-n
+             testes-quadrado-lista
+             testes-filtra-par))
