@@ -157,28 +157,12 @@
 
 ;; Crie uma função recursiva max-lista (abaixo) que, dada uma lista de números naturais,
 ;; calcula o maior número entre os presentes na lista. Use (max-lista '()) = 0.
-(define (retorna-lista l)
-  (if (number? l)
-      (list l)
-      l))
-
 (define (max-lista l)
-  (if (equal? l '())
+  (if (equal? '() l)
       0
-      (if (> (first l) (first(retorna-lista (max-lista (rest l)))))
-          (first l)
-          (first(retorna-lista (max-lista (rest l)))))))
-
-;;(if(> (first l) (max-lista (rest l)))
-;;(first l)
-;;(first(rest l)))
-
-(define-test-suite testes-max-lista
-  (test-equal? "maximo da lista vazia"       (max-lista '())                     0)
-  (test-equal? "maximo de lista unitaria"    (max-lista '(22))                   22)
-  (test-equal? "maximo de lista com numeros" (max-lista (list 8 55 13 24 45))    55)
-  (test-equal? "maximo não muda com ordem"   (max-lista (list 45 13 8 55 24))    55)
-  (test-equal? "maximo de lista com zeros"   (max-lista (list 1 0 13 0 356 0))   356))
+      (if(> (first l) (max-lista (rest l)))
+         (first l)
+         0)))
 
 ;; --- Exercício 11 --------------------
 
@@ -187,9 +171,7 @@
 ;; elemento da lista, contando a partir de zero. Se n é maior ou igual ao
 ;; tamanho da lista, a função deve retornar #f (veja os testes para exemplos
 (define (elemento-n lista n)
-  (if (> n (length lista))
-      #f
-      (if (> n ()  ;; usando '() ao inves de #f pois #f é um valor de retorno válido
+  '())  ;; usando '() ao inves de #f pois #f é um valor de retorno válido
 
 (define-test-suite testes-elemento-n
   (test-equal? "elemento de lista vazia" (elemento-n '() 0)                #f)
@@ -197,6 +179,45 @@
   (test-equal? "elemento 3"              (elemento-n (list 1 2 3 4 5) 3)    4)
   (test-equal? "ultimo elemento"         (elemento-n (list 1 2 3 4 5) 4)    5)
   (test-equal? "indice fora da lista"    (elemento-n (list 1 2 3 4 5) 7)    #f))
+
+;; --- Exercício 12 --------------------
+
+;; Muitas vezes precisamos transformar os elementos de uma lista da mesma
+;; maneira. Escreva a função quadrado-lista (abaixo) que, dada uma lista de
+;; números, obtém uma lista contendo o quadrado de cada número da lista
+;; original (nas mesmas posições)
+(define (quadrado-lista l)
+  #f)
+
+(define-test-suite testes-quadrado-lista
+  (test-equal? "quadrado da lista vazia"  (quadrado-lista '())        '())
+  (test-equal? "quadrado de um número"    (quadrado-lista '(5))       25)
+  (test-equal? "quadrado de números"
+               (quadrado-lista (list 2 5 12 25))
+               (list 4 25 144 625)))
+
+;; --- Exercício 13 --------------------
+
+;; Agora vamos selecionar itens em uma lista. Crie uma função filtra-par (abaixo)
+;; que, dado uma lista de números naturais, retorna uma outra lista contendo apenas
+;; os números pares da lista original. Use a função par definida no exercício 3
+(define (filtra-par l)
+  #f)
+
+(define-test-suite testes-filtra-par
+  (test-equal? "filtragem da lista vazia"     (filtra-par '())                  '())
+  (test-equal? "filtragem de lista sem pares" (filtra-par (list 1 3 5 7 9))     '())
+  (test-equal? "filtragem de lista com pares" (filtra-par (list 1 2 3 4 5))     (list 2 4))
+  (test-equal? "filtragem com todos os itens pares"
+               (filtra-par (list 2 4 22 144))
+               (list 2 4 22 144)))
+
+(define-test-suite testes-max-lista
+  (test-equal? "maximo da lista vazia"       (max-lista '())                     0)
+  (test-equal? "maximo de lista unitaria"    (max-lista '(22))                   22)
+  (test-equal? "maximo de lista com numeros" (max-lista (list 8 55 13 24 45))    55)
+  (test-equal? "maximo não muda com ordem"   (max-lista (list 45 13 8 55 24))    55)
+  (test-equal? "maximo de lista com zeros"   (max-lista (list 1 0 13 0 356 0))   356))
 
 ;; --- Executa todos os testes ---------
 (run-tests
@@ -210,5 +231,7 @@
              testes-soma-lista
              testes-mult-lista
              testes-max-lista
-             testes-elemento-n))
+             testes-elemento-n
+             testes-quadrado-lista
+             testes-filtra-par))
 

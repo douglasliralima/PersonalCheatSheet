@@ -1,0 +1,37 @@
+;; --- Exercício 12 --------------------
+
+;; Muitas vezes precisamos transformar os elementos de uma lista da mesma
+;; maneira. Escreva a função quadrado-lista (abaixo) que, dada uma lista de
+;; números, obtém uma lista contendo o quadrado de cada número da lista
+;; original (nas mesmas posições)
+(define (quadrado-lista l)
+  #f)
+
+(define-test-suite testes-quadrado-lista
+  (test-equal? "quadrado da lista vazia"  (quadrado-lista '())        '())
+  (test-equal? "quadrado de um número"    (quadrado-lista '(5))       25)
+  (test-equal? "quadrado de números"
+               (quadrado-lista (list 2 5 12 25))
+               (list 4 25 144 625)))
+
+;; --- Exercício 13 --------------------
+
+;; Agora vamos selecionar itens em uma lista. Crie uma função filtra-par (abaixo)
+;; que, dado uma lista de números naturais, retorna uma outra lista contendo apenas
+;; os números pares da lista original. Use a função par definida no exercício 3
+(define (filtra-par l)
+  #f)
+
+(define-test-suite testes-filtra-par
+  (test-equal? "filtragem da lista vazia"     (filtra-par '())                  '())
+  (test-equal? "filtragem de lista sem pares" (filtra-par (list 1 3 5 7 9))     '())
+  (test-equal? "filtragem de lista com pares" (filtra-par (list 1 2 3 4 5))     (list 2 4))
+  (test-equal? "filtragem com todos os itens pares"
+               (filtra-par (list 2 4 22 144))
+               (list 2 4 22 144)))
+
+;; --- Executa todos os testes ---------
+(run-tests
+ (test-suite "todos os testes"
+             testes-quadrado-lista
+             testes-filtra-par))
