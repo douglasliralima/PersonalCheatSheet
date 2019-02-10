@@ -58,18 +58,22 @@
       (soma n (mult n (- m 1)))
       )
   )
+
+;;Podemos definir sinônimos para os nomes de funções, podemos ver sua utilidade na lista3 exercicio 7
+(define fazMult mult)
+
 (define-test-suite testes-mult
   (test-equal? "3 * 4" (mult 3 4) 12)
   (test-equal? "5 * 0" (mult 5 0) 0)
   (test-equal? "0 * 5" (mult 0 5) 0)
-  (test-equal? "13 * 1" (mult 13 1) 13)
-  (test-equal? "1 * 13" (mult 1 13) 13)
+  (test-equal? "13 * 1" (fazMult 13 1) 13)
+  (test-equal? "1 * 13" (fazMult 1 13) 13)
   )
 
 ;; -----------------------LISTAS-----------------------------------------
 
 ;;Vamos agora criar listas, listas só tem duas caracteristicas
-'()                                     ;listas vazias
+'()                                ;listas vazias
 '(cons 1 '())
 (define lista1 (list 1))           ;(1)
 (define lista2 (list 2 1))         ;(2, 1)

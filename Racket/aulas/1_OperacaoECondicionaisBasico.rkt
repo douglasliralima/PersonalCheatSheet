@@ -41,9 +41,14 @@
 
 ;; Expressao condicional (note que não é um comando condicional)
 ;; Primeiro do if em caso verdadeiro e segundo em caso de falso
-(if (> 3 2) "tres maior que dois" "que?")
+(if (> 3 2) "Return isso se for verdadeiro" "Isso se for falso")
 
 (+ 5 (if (< 2 1) 0 3))
+
+;;Podemos fazer uma compilação de condicionais com o cond, quase um switch-case
+(cond [(< 4 2) "Se operação é falsa, então não vai aparecer retornar isso"]
+      [(< 2 1) "Essa também é falsa, então não vai aparecer retornar isso"]
+      [else "Como tudo era falso, vai aparecer isso aqui"])
 
 (define var-cond (if (> x 7) 11 22))    ; qual o valor de var-cond?
 
