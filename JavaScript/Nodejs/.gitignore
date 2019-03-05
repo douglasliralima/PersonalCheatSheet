@@ -1,6 +1,4 @@
 #É possível fazer comentários no gitignore
 #Caso queira deletar uma série de documentos de um mesmo tipo usar como exemplo *.txt
-1_1_ServidorSimples\node_modules\
-2_1_ServidorSegmentado\node_modules\
-2_2_CRUDREST\node_modules\
-3_1_RotasControllersMongoDB\node_modules\
+1_Introducao\node_modules\
+2_PrimeiraAPI\node_modules\
