@@ -1,24 +1,14 @@
 "use strict";
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const restify = __importStar(require("restify"));
-const server = restify.createServer({
-    name: 'meat-api',
-    version: '1.0.0'
-});
-//Simples requisição get, cada um desses parametros está descrito no documento do drive
-server.get('/hello', (req, resp, next) => {
-    //resp.json({message: 'hello'})
-    resp.send({ message: "Fala meu bom! o/" });
-    return next(); //Ao final de toda requisição http, nos sinalizamos no restify com next()
-});
-//Aqui apenas definimos em qual socket o nosso servidor vai se instalar
-server.listen(3000, () => {
-    console.log('API is running on http://localhost:3000');
+const serverRotasDentro_1 = require("./Server/serverRotasDentro");
+//Criamos o servidor
+const server = new serverRotasDentro_1.Server();
+//Inicailizamos as rotas dando startup no servidor
+server.bootstrap().then(server => {
+    //Endereço do servidor:
+    console.log('Server is listening on:', server.application.address());
+}).catch(error => {
+    console.log('Server failed to start');
+    console.error(error);
+    process.exit(1);
 });
