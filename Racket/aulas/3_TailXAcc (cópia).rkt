@@ -1,7 +1,14 @@
 #lang racket
 
+#|
+Fazer uma função recursiva pura com uma chamada em calda é um jeito
+muito ineficiente no que diz respeito a uso de memória e processamento.
+Temos melhores resultados usando um acumulador:
+|#
+
 (define (soma-lista lst)
-  (if (empty? lst) 0 (+ (first lst) (soma-lista (rest lst)))))
+  (if (empty? lst) 0
+      (+ (first lst) (soma-lista (rest lst)))))
 
 #|
 Aqui nos precisamos manter o contexto da função para fazer o calculo
@@ -13,10 +20,12 @@ Aqui nos precisamos manter o contexto da função para fazer o calculo
  = 10
 |#
 
+
 (define (pertence? x lst)
   (cond [(empty? lst) #f]
-        [(equal? x (first lst) #t)]
-        [else(pertence? x (rest lst))]))
+        [(equal? x (first lst)) #t]
+        [else (pertence? x (rest lst))]))
+
 #|
 Quando nós não temos que  depender da pilha e vamos direto em direção a calda da lista, ficamos mais próximos
 de um loop(while) e chamamos isso de recursividade tail call
@@ -44,7 +53,7 @@ Gastamos muito menos memória com isso, testar as duas funções com numeros gra
  = 10
 |#
 
-(define (soma-lista-optimazed lst)
+(define (soma-lista-Optimized lst)
   (define (soma-lista-acc lst acc)
     (if (empty? lst)
         acc
