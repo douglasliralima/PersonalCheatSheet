@@ -1,6 +1,7 @@
 #lang racket
 ;;String-length
 (string-length "Douglas")
+(non-empty-string? "") ;;Retorna falso se a string n é vazia
 
 ;;String-append
 (string-append "Apple" "Banana") ;;Resultado appleBanana
