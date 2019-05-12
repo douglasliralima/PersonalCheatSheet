@@ -41,7 +41,7 @@ class cachorro(mamifero): #Precisamos colocar a classe que iremos acessar
 	#Se omitirmos self, estaremos criando um mรฉtodo de classe
 	def __init__(self, nome, idade, patas, genero):
 		#Para chamar qualquer mรฉtodo da classe acima na herança, basta usar a funcao super, passando a classe que tรก chamando e o objeto que faz a chamada
-		super(cachorro, self).__init__(patas, genero)
+		super().__init__(patas, genero)
 		#Aqui nos temos um this também que cria as variáกveis para a própria classe, ela é um self.,
         #colocamos o _ para simbolizar que a variavel é privada, vale também para métodos
 		self._nome = nome
@@ -64,7 +64,7 @@ class cachorro(mamifero): #Precisamos colocar a classe que iremos acessar
 
 	#Precisamos sobreescrever o mรฉtodo str em python para podermos retornar a string como padrรฃo
 	def __str__(self):
-		return "Cachorro: \nNome: " + self._nome + "\nIdade: " + str(self._idade) + super(cachorro, self).__str__()
+		return "Cachorro: \nNome: " + self._nome + "\nIdade: " + str(self._idade) + super().__str__()
 
 
 catioro = cachorro("Bethoveen", 2, 4, "masculino")
