@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Curso de JavaScript</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <!--A DOM no são todos os elementos do template html, vamos imaginar esse botão:-->
+      <!--Veja que associamos a um evento de clique uma função de pop up-->
+      <button onclick="mostraAlerta()">Me Pressione</button>
+      <!--VTemos vários eventos, como esse abaixo, mais detalhes dos eventos:-->
+      <button onmouseover="mostraAlerta()">Passe Encima</button>
+      
+    </div>
+    <script>
+      //Veja, podemos fazer essa função abaixo e associar com o evento onClick do primeiro botão
+      function mostraAlerta(){
+        alert("ALERTA VERMELHO!")
+      }
+
+
+      
+    </script>
+  </body>
+</html>

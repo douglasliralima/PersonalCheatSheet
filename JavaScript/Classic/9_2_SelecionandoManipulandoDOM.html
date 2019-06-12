@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Curso de JavaScript</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <!--Exemplo de como pegar valor de um input de texto, 
+        se vamos manipular a dom, precisamos dar nome a todos os objetos-->
+      <!--<input type="text" id="nome"/>-->
+        <input type="text" name="nome"/>
+      <!--Nos nomeamos o botão a partir do atributo class, esse que diferente do id
+      não precisa ser único-->
+      <button class = "botao">Pop up mensagem</button>
+    </div>
+    <script>
+      //Document é uma variável global para acessar qualquer coisa no HTML
+      //A partir dessa variável global, vamos pegar o input a partir do seu id
+      var elementoDOM = document.getElementById("nome")
+      console.log(elementoDOM)
+
+      //Podemos pegar um conjunto de objetos da DOM a partir da TAG(Return lista)
+      var elementoDOM = document.getElementsByTagName("input")
+      console.log(elementoDOM)
+
+      //A partir de sua class, para pegar um elemento da lista é só tratar igual array
+      var elementoDOM = document.getElementsByClassName("botao")[0]
+      console.log(elementoDOM)
+
+      //Um jeito que o instrutor parece se entusiasmar mais é com o querySelector
+      //Aqui nos referenciamos diretamente o caminho de onde está aquilo que queremos
+      var elementoDOM = document.querySelector("div#app input")
+      console.log(elementoDOM)
+
+      var elementoDOM = document.querySelector("input[name = nome]")
+      console.log(elementoDOM)
+
+      /**
+       * O query selector sempre vai pegar o primeiro elemento que ele achar,
+       * basicamente ele trabalha descendo na arvore da DOM e retorna o primeiro com
+       * as diretrizes passadas ou no caminho indicado e mais para baixo.
+       * 
+       * Se quiser pegar outros elementos no mesmo caminho ou com setting igual, usar
+       * o querySelectorAll
+      */
+
+      //Pegando os elementos da DOM, podemos os manipular totalmente aqui dentro:
+      var botao = document.querySelector("button.botao") //'.' para referenciar classe
+      var input = document.querySelector("input[name = nome]")
+
+      botao.onclick = function() {
+        alert(input.value)
+      }
+    </script>
+  </body>
+</html>

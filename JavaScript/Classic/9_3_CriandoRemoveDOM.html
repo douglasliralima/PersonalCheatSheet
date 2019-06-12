@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Curso de JavaScript</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <input type="text" id="nome"/>
+
+    </div>
+    
+    <script>
+      //Vamos criar um elemento de hiperlink, pois ele tem coisas bem gerais 
+      //para todas as tags isso é possível pela global document
+      var linkElement = document.createElement("a")
+
+      //Vamos settar um atributo com seu respectivo valor
+      linkElement.setAttribute('href', 'https://github.com/douglasliralima/TecnoBenkyoCheatSheet/')
+      
+      //Precisamos criar um elemento de texto para colocar dentro da tag a que 
+      //dará acesso ao link
+      var text = document.createTextNode("Acessar acervo com esse e outros códigos para consulta rápida")
+      linkElement.appendChild(text)
+
+      //Pronto, agora a tag tá finalizada, nos jogamos ele dentro da nossa div da mesma
+      //maneira em que acrescentamos um texto na tag a
+
+      var nossaDiv = document.querySelector("div#app")
+      nossaDiv.appendChild(linkElement)
+
+      //Podemos também remover elementos da nossa DOM:
+      var input = document.querySelector("input[id = nome]") //Vai ir procurando pelo valor nome na arvore DOM
+      nossaDiv.removeChild(input)
+    </script>
+  </body>
+</html>
