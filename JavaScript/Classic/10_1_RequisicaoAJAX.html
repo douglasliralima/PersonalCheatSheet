@@ -24,7 +24,7 @@
       //Para executar alguma funcionalidade quando essa informação chega, basta criar
       //Uma função abstrata
       xhr.onreadystatechange = function() {
-        //4 é o número quando a requisição retorna e deu td bem
+        //4 é o número do readyState quando a requisição AJAX termina
         if (xhr.readyState === 4) {
           //Precisamos transformar XML em JSON
           console.log(JSON.parse(xhr.responseText))
