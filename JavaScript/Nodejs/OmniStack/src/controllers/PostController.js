@@ -41,7 +41,7 @@ module.exports = {
             place, 
             description, 
             hashtag,
-            newImgName
+            image : newImgName,
         })
 
         //Emite a todos os sockets conectados ao servidor nesse protocolo o novo post
