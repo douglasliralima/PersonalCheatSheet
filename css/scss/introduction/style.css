@@ -1,0 +1,53 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0; }
+
+/*
+  No Scss nos temos varíaveis, geralmente usadas para guardar valores de cores, fazemos isso para termos um esquema de cores que se reflita em todo o código e seja facilmente mudado
+  */
+nav {
+  margin: 30px;
+  background-color: #f9ed69; }
+  nav::after {
+    content: "";
+    clear: both;
+    display: table; }
+
+.navigation {
+  list-style: none;
+  float: left; }
+  .navigation li {
+    display: inline-block;
+    margin-left: 30px; }
+    .navigation li:first-child {
+      margin: 0; }
+    .navigation li a {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: black; }
+
+.buttons {
+  float: right; }
+
+.btn-main:link, .btn-hot:link {
+  padding: 10px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 100px;
+  width: 150px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff; }
+
+.btn-main:link {
+  background-color: #f08a5d; }
+
+.btn-main:hover {
+  background-color: #ea5717; }
+
+.btn-hot:link {
+  background-color: #aaa; }
+
+.btn-hot:hover {
+  background-color: #d0d0d0; }
