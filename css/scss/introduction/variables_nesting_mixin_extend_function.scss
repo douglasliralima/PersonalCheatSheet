@@ -1,0 +1,100 @@
+* {
+    margin : 0;
+    padding : 0;
+  }
+  /*
+  No Scss nos temos varíaveis, geralmente usadas para guardar valores de cores, fazemos isso para termos um esquema de cores que se reflita em todo o código e seja facilmente mudado
+  */
+  
+  $color-primary : #f9ed69; //Cor amarelo
+  $color-secondary : #f08a5d; //Laranja
+  $color-tertiary : #aaa; //Cinza
+  $text-color-dark : black;
+  $text-color-white : #fff;
+  $width-button : 150px; //podemos quardar qualquer valor numerico
+  
+  //Caso nos tenhamos um pedaço de css que vai ser usado em vários blocos, podemos fazer uma regra reutilizável também
+  @mixin clearfix {
+    &::after {
+      content: "";
+      clear : both;
+      display : table;
+    }   
+  }
+  
+  @mixin style-link-text($color){
+    text-decoration : none;
+    text-transform : uppercase;
+    color: $color;
+  }
+  
+  @function example($a, $b){
+    @return $a / $b;
+  }
+  
+  nav {
+    margin : 30px;
+    background-color : $color-primary;
+    //Para incluir uma regra reutilizavel tbm é fácil
+    @include clearfix;
+    
+  }
+  
+  .navigation {
+    list-style : none;
+    //Ao adicionar o float, nos dois filhos do nav, ele   colapsa e ele perde a referência de tamanho
+    float : left;
+    //Podemos fazer neasted selector diretamente
+    li{
+      display : inline-block;
+      margin-left : 30px;
+      
+      //O & permite fazer referència ao nível corrente em um neasted selector
+      &:first-child {
+        margin : 0;
+      }
+      a {
+        @include style-link-text($text-color-dark);
+      }
+    }
+  }
+  
+  .buttons{
+    float: right;
+  }
+  
+  //Podemos fazer o extend de um conjunto de definições de uma vez com o uso de placehoulders e extends
+  //Todo mundo que extender esse placeholder, terá seu selection colocado aqui, ao invés de copiar esse código, como no caso do mixin
+  %btn-placeholder {
+    padding : 10px;
+    display : inline-block;
+    text-align : center;
+    border-radius : 100px;
+    width : $width-button;
+    @include style-link-text($text-color-white);
+  }
+  
+  //Operação muito boa para alterar vários estados em uma única regra
+  .btn-main{
+    &:link {
+      @extend %btn-placeholder;
+      background-color : $color-secondary;
+    }
+    
+    &:hover {
+      //Função para deixar uma cor mais escura
+      background-color : darken($color-secondary, 15%);
+    }
+  }
+  
+  .btn-hot{
+    &:link {
+      @extend %btn-placeholder;
+      background-color : $color-tertiary;
+    }
+    
+    &:hover {
+      //Função para deixar uma cor mais escura
+      background-color : lighten($color-tertiary, 15%);
+    }
+  }
