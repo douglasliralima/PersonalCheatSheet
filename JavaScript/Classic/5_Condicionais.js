@@ -1,27 +1,3 @@
-tut.htmlJavaScript
-
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <script src="jstut.js"></script>
-
-    <style type="text/css">
-      body {font-size: 1.6em;}
-      .hidden {display:none;}
-      .show {display:inline !important;}
-      button {
-        border: 2px solid black; background: #E5E4E2;
-        font-size: .5em; font-weight: bold; color: black;
-        padding: .8em 2em;
-        margin-top: .4em;
-      }
-    </style>
-
-  </head>
-  <body>
-  
-<script>
 // ---------- CONDITIONALS ----------
 //Aqui não tem segredo não, igual JAVA, com a diferença entre == e ===
     // Relational Operators : == != > < >= <=
@@ -42,8 +18,10 @@ tut.htmlJavaScript
     
     document.write("!true = ", ! true, "<br />");
     
+    //O == ele checa independente do tipo, se o valor corresponde
     document.write("\"5\" == 5 = ", ("5" == 5), "<br />");
     
+    //Pessoal usa mais esse aqui, aqui comparamos tanto o tipo, quanto o valor
     document.write("\"5\" === 5 = ", ("5" === 5), "<br />");
     
     // Switch is used to match a limited number of options
@@ -67,4 +45,3 @@ tut.htmlJavaScript
     
     document.write("Can I Vote : ", canIVote, "<br />");
     
-</script>
