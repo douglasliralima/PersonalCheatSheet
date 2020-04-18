@@ -1,28 +1,3 @@
-tut.htmlJavaScript
-
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <script src="jstut.js"></script>
-
-    <style type="text/css">
-      body {font-size: 1.6em;}
-      .hidden {display:none;}
-      .show {display:inline !important;}
-      button {
-        border: 2px solid black; background: #E5E4E2;
-        font-size: .5em; font-weight: bold; color: black;
-        padding: .8em 2em;
-        margin-top: .4em;
-      }
-    </style>
-
-  </head>
-  <body>
-  
-<script>
-
   // ---------- LOOPING ----------
 
   // While e for igual a java, mas temos o for in também
@@ -62,5 +37,3 @@ tut.htmlJavaScript
   for(k in customer){
     document.write(customer[k], "<br />");
   }
-
-</script>
