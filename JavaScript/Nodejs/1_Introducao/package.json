@@ -1,20 +1,15 @@
 {
-  "name": "Introducao",
+  "name": "1_introducao",
   "version": "1.0.0",
   "description": "",
-  "main": "1_Require_save-file.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "typescript": "^3.3.3333",
-    "yargs": "^13.2.1"
-  },
-  "devDependencies": {
-    "@types/node": "^11.10.4",
-    "@types/yargs": "^12.0.9"
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
   }
 }
