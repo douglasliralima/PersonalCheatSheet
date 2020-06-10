@@ -1,0 +1,10 @@
+O ambiente docker é muito útil, pois ele oferece um ambiente padronizado onde podemos colocar nossa
+aplicação fe ou be e ter certeza que envelopado ali dentro, ele vai rodar em qualquer servidor ou
+ambiente em que esteja instalado o Docker.
+Isso facilita muito o DevOps, devido ao ambiente de aplicação se tornar menos relevante.
+
+Basicamente o workflow é:
+
+Construimos uma imagem em um arquivo Dockerfile -> Docker Image -> Divulgamos essa imagem no docker hub ou outro ambiente -> Alguém baixa com o comando de pull -> Docker Container
+                                                                -> Criamos o nosso container
+s

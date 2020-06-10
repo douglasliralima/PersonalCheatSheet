@@ -1,0 +1,42 @@
+.header {
+    position: relative;
+    height: 95vh;
+    background-image: linear-gradient(
+        to right bottom, 
+        $light-green-alpha, 
+        $medium-green-alpha), 
+    url("../img/hero.jpg");
+    /*Essa tag está dizendo que a definição de background vai tentar preencher toda a box
+    com esse tipo*/
+    background-size: cover;
+    /*Isso aqui manterá a imagem posionada no topo do seu container não cortando o topo, mas sim
+    o centro ou a parte de baixo, a medida que a tela diminui*/
+    background-position: top;
+    /*Nos vamos especificar um poligono no formato de 4 tuplas x y do que estará visível na
+    imagem, os pontos vão seguindo de forma horária, começando do superior esquerdo
+    Várias coisas já estão feitas nesses sites, vários crops diferentes*/
+    clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
+
+    &__logo-box {
+        position: absolute;
+        top : 4rem;
+        left : 4rem;
+    }
+
+    &__logo {
+        height: 3.5rem;
+    }
+
+    &__text-position{
+        /*Esse posicionamento é em relação ao pai do elemento, logo o canto superior direito
+        estará a 40% do topo e a esquerda do pai*/
+        position: absolute;
+        top : 50%;
+        left : 50%;
+        /*Isso aqui é para centralizar o elemento em relação ao seu canto superior direito, trazendo
+        o meio do elemento para o ponto de referência que é sempre no canto superior direito*/ 
+        transform: translate(-50%, -50%);
+        text-align: center;
+
+    }
+}

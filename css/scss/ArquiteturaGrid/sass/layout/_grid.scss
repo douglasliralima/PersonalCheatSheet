@@ -1,0 +1,35 @@
+.row {
+    // O max-width vai deixar 114rem quando possível, mas se o viewport for menor, ele adequa o tamanho
+    max-width : $grid-width;
+    background: #eee;
+    //Para centralizar um elemento em seu pai, uma técnica muito fácil é passar 0 auto, com isso o
+    //topo e bottom vai ficar 0 e como os lados são auto, o navegador deixa a mesma quantidade para os lados
+    margin : 0 auto;
+
+    &:not(:last-child){
+        margin-bottom: $gutter-vertical;
+    }
+    // Todas as colunas da linha estão flutuando, o seu tamanho  e altura colapsam,
+    // então para arruamr isso ou add um elemento vazio ou fazemos o clearfix
+    @include clearfix;
+
+    .col-1-of-2 {
+        //A função calc permite fazer calculos com números de multiplas unidades e em tempo de compilação
+        width : calc((100% - #{$gutter-horizontal}) / 2);
+        float: left;
+        &:not(:last-of-type){
+            margin-right: $gutter-horizontal;
+        }
+
+    .col-1-of-3 {
+            width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
+            float: left;
+            &:not(:last-of-type){
+                margin-right: $gutter-horizontal;
+            }
+        }
+
+
+    
+    }
+}

@@ -1,0 +1,230 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+* {
+    margin : 0px;
+    padding: 0px;
+    box-sizing: inherit;
+}
+
+html {
+    /*
+    Os browsers por padrão deixam um font-size de 16px, algumas pessoas as vezes mudam isso para poder
+    ler melhor, mas se trabalharmos com esse padrão, 62.5% de 16px é 10px.
+
+    Fazemos isso aqui para trabalhar com a unidade Rem, essa que é a mais usada para deixar o site
+    responsívo, cada 1 rem = pixels do font-size, fixando o font-size como 10px deixa mais fácil de
+    planejarmos as medições das coisas, sendo que essas vão ser perfeitamente realocados para mobile
+    */
+    font-size: 62.5%;
+}
+
+/* 
+Aqui estão as configurações
+elas estão no body, porque qualquer outro elemento de texto começa a herdar suas prioridades
+a partir do body
+*/
+
+body {
+    font-family: "lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #777;
+    /*Padding não é heardável, cada 1 tem o seu*/
+    padding: 30px;
+
+    /* Essa tag faz com a margin e o paddin não estejam anexados no 
+    tamanho total na horizontal ou vertical*/ 
+    box-sizing: border-box;
+}
+
+.header {
+    position: relative;
+    height: 95vh;
+    background-image: linear-gradient(
+        to right bottom, 
+        #7ed56fd0, 
+        #55c57ac7), 
+    url("../img/hero.jpg");
+    /*Essa tag está dizendo que a definição de background vai tentar preencher toda a box
+    com esse tipo*/
+    background-size: cover;
+    /*Isso aqui manterá a imagem posionada no topo do seu container não cortando o topo, mas sim
+    o centro ou a parte de baixo, a medida que a tela diminui*/
+    background-position: top;
+    /*Nos vamos especificar um poligono no formato de 4 tuplas x y do que estará visível na
+    imagem, os pontos vão seguindo de forma horária, começando do superior esquerdo
+    Várias coisas já estão feitas nesses sites, vários crops diferentes*/
+    clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
+}
+
+.header__logo-box {
+    position: absolute;
+    top : 4rem;
+    left : 4rem;
+}
+
+.header__logo {
+    height: 3.5rem;
+}
+.header__text-position{
+    /*Esse posicionamento é em relação ao pai do elemento, logo o canto superior direito
+    estará a 40% do topo e a esquerda do pai*/
+    position: absolute;
+    top : 50%;
+    left : 50%;
+    /*Isso aqui é para centralizar o elemento em relação ao seu canto superior direito, trazendo
+    o meio do elemento para o ponto de referência que é sempre no canto superior direito*/ 
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.heading-primary {
+    color : #fff;
+    text-transform: uppercase;
+    backface-visibility: hidden; /*Usamos para corrigir o bug da animação q da uma tremida*/
+    margin-bottom: 6rem;
+}
+
+.heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 2s; /*Podemos definir uma animação e quanto tempo ela iria durar*/
+    /*essa tag diz como será realizado a duração da animaçaõ, no caso a ease-out
+    deixa a animação rápida no começo e lenta no fim*/
+    animation-timing-function: ease-out; 
+}
+
+.heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 2s ease-out;
+     /*
+        Outras tags maneiras para se ter em mente
+        animation-delay: 2s; para deixar um delay até a animação começar
+        animation-iteration-count: 3; /Repetição da animação
+    */
+}
+
+/*
+    Uma animação é feita usando-se as propriedades do keyframe
+    nele nos passamos um objeto indo de 0 até 100% do estado dessa animação
+    Os Browser são otimizados apenas para as tags de transform e opacity, por isso
+    tende-se a usar apenas elas
+*/
+@keyframes moveInLeft { 
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+    80% {
+        transform: translateX(1rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0rem);
+    }
+}
+
+@keyframes moveInRight { 
+    0% {
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+    80% {
+        transform: translateX(-1rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0rem);
+    }
+}
+
+@keyframes moveInBottom { 
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0rem);
+    }
+}
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block; /*deixa como block, mas mantem perspectivas de padding e margin*/
+    border-radius: 10rem; /*Para cortar bordars*/
+    /*Nesses estados iniciais é onde especificamos como a animação vai acontecer, aqui abaixo
+    falamos que para todas as transições, a animação vai acontecer em 0.2s para ser mais lento
+    e soft*/
+    transition: all .2s;
+    position: relative;
+    /*Pequena animação para fazer o botão vir de baixo*/
+    font-size: 1.6rem;
+}
+
+.btn:hover{
+    transform: translateY(-0.03rem);
+    /*Essa tag define uma caixa de sombra, o primeiro parametro é a sombra em x, nesse caso
+    para os dois lados, em y e depois nos temos até onde essa sombra terá de penumbra, logo
+    em seguida definimos a cor dessa sombra*/
+    box-shadow: 0rem 1rem 2rem  
+}
+
+.btn:active {
+    transform: translateY(-0.01rem);
+    box-shadow:0rem 1rem 2rem rgb(0,0,0,0.2);
+}
+
+.btn--white {
+    background-color: #fff;
+    color : #777
+}
+
+/*Essa pseudo-classe vai adicionar um elemento logo após quem ela está junto, no caso o btn
+podemos então fazer uma copia desse botão, logo depois dele*/
+.btn::after {
+    content: "";
+    display: inline-block;
+    border-radius: 10rem;
+    /*O pseudo elemento after é pensado como um filho de quem ele está junto, no caso o btn*/
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /*Com isso vamos colocar o botão logo atrás*/
+    top : 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn--white::after{
+    background-color: #fff;
+    color : #777
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn--animated {
+    animation: moveInBottom 2s ease-out;
+    /*Essa tag força o elemento a estar no estado 0% da animação, assim que ele é renderizado
+    na tela*/
+    animation-fill-mode: backwards;
+}

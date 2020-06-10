@@ -1,0 +1,30 @@
+
+* {
+    margin : 0px;
+    padding: 0px;
+    box-sizing: inherit;
+}
+
+html {
+    /*
+    Os browsers por padrão deixam um font-size de 16px, algumas pessoas as vezes mudam isso para poder
+    ler melhor, mas se trabalharmos com esse padrão, 62.5% de 16px é 10px.
+
+    Fazemos isso aqui para trabalhar com a unidade Rem, essa que é a mais usada para deixar o site
+    responsívo, cada 1 rem = pixels do font-size, fixando o font-size como 10px deixa mais fácil de
+    planejarmos as medições das coisas, sendo que essas vão ser perfeitamente realocados para mobile
+    */
+    font-size: 62.5%;
+}
+
+/* 
+Aqui estão as configurações
+elas estão no body, porque qualquer outro elemento de texto começa a herdar suas prioridades
+a partir do body
+*/
+
+body {
+    /* Essa tag faz com a margin e o paddin não estejam anexados no 
+    tamanho total na horizontal ou vertical*/ 
+    box-sizing: border-box;
+} 

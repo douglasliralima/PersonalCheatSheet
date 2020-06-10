@@ -1,0 +1,40 @@
+body {
+    font-family: "lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #777;
+    /*Padding não é heardável, cada 1 tem o seu*/
+    padding: 30px;
+
+}
+
+.heading-primary {
+    color : $white-color;
+    text-transform: uppercase;
+    backface-visibility: hidden; /*Usamos para corrigir o bug da animação q da uma tremida*/
+    margin-bottom: 6rem;
+
+    &--main{
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+        animation-name: moveInLeft;
+        animation-duration: 2s; /*Podemos definir uma animação e quanto tempo ela iria durar*/
+        /*essa tag diz como será realizado a duração da animaçaõ, no caso a ease-out
+        deixa a animação rápida no começo e lenta no fim*/
+        animation-timing-function: ease-out; 
+    }
+    &--sub {
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.75rem;
+        animation: moveInRight 2s ease-out;
+         /*
+            Outras tags maneiras para se ter em mente
+            animation-delay: 2s; para deixar um delay até a animação começar
+            animation-iteration-count: 3; /Repetição da animação
+        */
+    }
+}

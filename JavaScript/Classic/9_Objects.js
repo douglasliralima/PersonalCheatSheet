@@ -33,6 +33,9 @@ const o3 = {
     },
 }
 
+//Para deletar qualquer chave valor de um objeto, basta usar o operador delete
+delete o3["firstName"]
+
 //Os identificadores são uma referência para os objetos, logo isso aqui
 
 let o4 = o3;

@@ -1,0 +1,71 @@
+.btn {
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        display: inline-block; /*deixa como block, mas mantem perspectivas de padding e margin*/
+        border-radius: 10rem; /*Para cortar bordars*/
+        /*Nesses estados iniciais é onde especificamos como a animação vai acontecer, aqui abaixo
+        falamos que para todas as transições, a animação vai acontecer em 0.2s para ser mais lento
+        e soft*/
+        transition: all .2s;
+        position: relative;
+        /*Pequena animação para fazer o botão vir de baixo*/
+        font-size: 1.6rem;
+    }
+    &:hover{
+        transform: translateY(-0.03rem);
+        /*Essa tag define uma caixa de sombra, o primeiro parametro é a sombra em x, nesse caso
+        para os dois lados, em y e depois nos temos até onde essa sombra terá de penumbra, logo
+        em seguida definimos a cor dessa sombra*/
+        box-shadow: 0rem 1rem 2rem; 
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+
+    &:active {
+        transform: translateY(-0.01rem);
+        box-shadow:0rem 1rem 2rem $grey-color;
+    }
+
+
+    &--white {
+        background-color: $white-color;
+        color : $grey-color;
+
+        &::after{
+            background-color: $white-color;
+            color : $grey-color;
+        }
+    }
+
+    /*Essa pseudo-classe vai adicionar um elemento logo após quem ela está junto, no caso o btn
+    podemos então fazer uma copia desse botão, logo depois dele*/
+    &::after {
+        content: "";
+        display: inline-block;
+        border-radius: 10rem;
+        /*O pseudo elemento after é pensado como um filho de quem ele está junto, no caso o btn*/
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        /*Com isso vamos colocar o botão logo atrás*/
+        top : 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }
+
+
+
+    &--animated {
+        animation: moveInBottom 2s ease-out;
+        /*Essa tag força o elemento a estar no estado 0% da animação, assim que ele é renderizado
+        na tela*/
+        animation-fill-mode: backwards;
+    }
+
+}

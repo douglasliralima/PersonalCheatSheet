@@ -1,0 +1,44 @@
+/*
+    Uma animação é feita usando-se as propriedades do keyframe
+    nele nos passamos um objeto indo de 0 até 100% do estado dessa animação
+    Os Browser são otimizados apenas para as tags de transform e opacity, por isso
+    tende-se a usar apenas elas
+*/
+@keyframes moveInLeft { 
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+    80% {
+        transform: translateX(1rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0rem);
+    }
+}
+
+@keyframes moveInRight { 
+    0% {
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+    80% {
+        transform: translateX(-1rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0rem);
+    }
+}
+
+@keyframes moveInBottom { 
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0rem);
+    }
+}
