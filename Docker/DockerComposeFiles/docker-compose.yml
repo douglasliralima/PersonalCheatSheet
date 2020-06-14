@@ -1,0 +1,17 @@
+# Docker compose é uma ferramente que nos permite settar um ambiente com multiplos containers
+# Executando ao mesmo tempo, de forma coordenada, e com essa central de controle
+
+# Primeiro é bom sempre definir qual versão você estará utilizando
+version : '3.0'
+
+# Podemos então definir os serviços que estaremos criando
+services:
+  web:
+    #Passamos a imagem do que queremos ter naquele serviço
+    image : nginx;
+    ports :
+      #Aqui segue o formato Porta da sua máquina:porta docker que ela estará se comunicando
+      - 8080:80
+
+  database:
+    image : redis;

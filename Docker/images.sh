@@ -1,6 +1,7 @@
 echo "Podemos puxar uma imagem do pronta do dockerhub para a nossa máquina com o comando:";
 docker pull hello-world;
- 
+ # docker pull <image-name:tag> para alguma versão especifica de imagem
+
 echo "Esse é o comando que permite nos visualizarmos as nossas imagens\n";
 docker images;
 

@@ -9,3 +9,6 @@ docker system prune;
 
 echo "Isso aqui limpa EVERYTHING, até as imagens, tudo"
 docker system prune -a;
+
+echo "Podemos também parar de executar o docker em nosso pc por completo>"
+sudo service docker stop
