@@ -18,10 +18,26 @@ echo "Se quisermos apenas alocar o container, mas executa-lo em outro momento fa
 docker run -it -d ubuntu; #Assim ele entra no modo detachado, que é como se fosse em stand by
 
 echo "Podemos então executa-lo depois com:";
-# docker exec -it [nome container] bash
+# docker exec -it ContainerName bash
 
 echo "Para parar qualquer container em execução, usamos o comando";
-# docker stop [id do container]
+# docker stop ContainerId
 
 echo "Caso um container seja parado, para reinicializa-lo, usamos:"
-# docker start [nome container] #Ele já entra em modo detachado
+# docker start ContainerName #Ele já entra em modo detachado
+
+echo "Podemos similarmente pausar e despausar um container"
+docker pause ContainedId
+docker unpause ContainerId
+
+echo "A diferença entre ele e o stop é que o stop pede e depois termina o processo, liberando a memória, já"
+echo "o pause, simplesmente congela o processo, mantendo a memória desse processo"
+
+echo "Podemos ver como está um container executando-o, veja:"
+docker stats ContainedId
+
+echo "Você pode se juntar a sessão de um container que esteja running com o comando"
+docker attach ContainerId
+
+echo "Você pode matar a sessão de um container que esteja rodando com o comando:"
+docker kill ContainerId
