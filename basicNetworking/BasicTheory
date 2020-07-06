@@ -1,0 +1,20 @@
+A conexão básica pela internet acontece por um roteador -> Provedor de internet -> Ele tem roteadores com o resto do mundo
+
+Quando queremos realizar alguma ação, nosso roteador ou meio de internet manda um request
+para o roteador, que diz querer aquele conteúdo, ele manda esse conteúdo pelo roteador, que
+segue o caminho acima.
+
+O provedor, ao ver o seu request, com um endereço tipo o "google.com.br", possui um servidor de
+dns(domain name server) que traduz esse domain em um ip, o servidor web então recebe aquele
+request e toda a sua info. e responde de acordo.
+
+Lembrando que um domain ele tem o seu nível de prioridade, de onde ir buscando aquele endereço
+de trás pra frente.
+
+Com o protocolo Ipv4 nos temos endereços de ip que vão de 1.1.1.1 até 255.255.255.255 o que 
+não é muito se você coloca em perspectivas globais, para resolver esse problema usamos o prot.
+NAT, que é um modem ou roteador, com uma rede local.
+
+A rede local tem seu próprio ip local e o roteador fica a cargo de trackear as requisições
+dos dispositivos locais e suas devidas respostas, logo existe o ip do seu device e o ip do 
+roteador de fato que você está se conectando
