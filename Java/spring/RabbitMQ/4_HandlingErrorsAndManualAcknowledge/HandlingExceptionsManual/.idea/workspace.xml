@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a32cf58d-d985-4ee8-8ac5-0b6726fc4fd2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../docker/data/rabbit@docker-rabbitmq.pid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../docker/data/rabbit@docker-rabbitmq/DECISION_TAB.LOG" beforeDir="false" afterPath="$PROJECT_DIR$/../../docker/data/rabbit@docker-rabbitmq/DECISION_TAB.LOG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../docker/data/rabbit@docker-rabbitmq/LATEST.LOG" beforeDir="false" afterPath="$PROJECT_DIR$/../../docker/data/rabbit@docker-rabbitmq/LATEST.LOG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../docker/data/rabbit@docker-rabbitmq/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/queues/66DGFQXJKUGAEDDBIDU1K9NE3/.queue_name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../docker/data/rabbit@docker-rabbitmq/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/queues/66DGFQXJKUGAEDDBIDU1K9NE3/journal.jif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../docker/data/rabbit@docker-rabbitmq/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/recovery.dets" beforeDir="false" afterPath="$PROJECT_DIR$/../../docker/data/rabbit@docker-rabbitmq/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/recovery.dets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../docker/data/rabbit@docker-rabbitmq/quorum/rabbit@docker-rabbitmq/00000002.wal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../docker/data/rabbit@docker-rabbitmq/rabbit_durable_exchange.DCD" beforeDir="false" afterPath="$PROJECT_DIR$/../../docker/data/rabbit@docker-rabbitmq/rabbit_durable_exchange.DCD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../docker/data/rabbit@docker-rabbitmq/rabbit_durable_exchange.DCL" beforeDir="false" afterPath="$PROJECT_DIR$/../../docker/data/rabbit@docker-rabbitmq/rabbit_durable_exchange.DCL" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../docker/data/rabbit@docker-rabbitmq/rabbit_durable_queue.DCD" beforeDir="false" afterPath="$PROJECT_DIR$/../../docker/data/rabbit@docker-rabbitmq/rabbit_durable_queue.DCD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../docker/data/rabbit@docker-rabbitmq/rabbit_durable_route.DCD" beforeDir="false" afterPath="$PROJECT_DIR$/../../docker/data/rabbit@docker-rabbitmq/rabbit_durable_route.DCD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../docker/data/rabbit@docker-rabbitmq/rabbit_durable_route.DCL" beforeDir="false" afterPath="$PROJECT_DIR$/../../docker/data/rabbit@docker-rabbitmq/rabbit_durable_route.DCL" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../docker/data/rabbit@docker-rabbitmq/rabbit_runtime_parameters.DCD" beforeDir="false" afterPath="$PROJECT_DIR$/../../docker/data/rabbit@docker-rabbitmq/rabbit_runtime_parameters.DCD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../docker/data/rabbit@docker-rabbitmq/rabbit_serial" beforeDir="false" afterPath="$PROJECT_DIR$/../../docker/data/rabbit@docker-rabbitmq/rabbit_serial" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
+  </component>
+  <component name="ProjectId" id="1f6OTGTVtVbrHJqEh81u2su1ZiG" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a32cf58d-d985-4ee8-8ac5-0b6726fc4fd2" name="Default Changelist" comment="" />
+      <created>1595535082019</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1595535082019</updated>
+    </task>
+    <servers />
+  </component>
+</project>
