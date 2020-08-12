@@ -6,14 +6,15 @@ let app = express();
 
 //Precisamos passar algum interpretador de corpo de requisição, para conseguirmos ter acesso
 //no .body o json(VEJA REQUEST)
-app.use(body_parser.json())
+// acho q n precisa mais disso
+app.use(body_parser.json()) 
 
 // app.METHOD(PATH, CALLBACKHANDLER)
 app.get("/teste", function(response, request){
     console.log("Rota de teste no express")
 })
 
-// Response, métdos mais comuns neles:
+// Response, métodos mais comuns neles:
 // .send(): Envia uma resposta de vários tipos.
 // .sendFile(): Envia um arquivo como resposta.
 // .json(): Envia um resposta JSON.
@@ -51,9 +52,11 @@ app.get("/home/cliente", function(request, response){
 // .query: Um objeto que contém uma propriedade para cada query na rota, no formato /rota?query=value.
 // .method: O método HTTP da requisição, como GET, POST, DELETE, etc.
 app.get("home/:id/:cliente", function(request, response){
-    console.log(request.params.id);
+    const {id, cliente} = request.params
+    console.log(id);
     console.log(request.params.cliente);
-    console.log(request.query)
+    console.log(request.query.nascimento) //
     console.log(request.body)
 })
+
 app.listen(8080);
