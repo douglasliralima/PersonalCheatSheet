@@ -1,0 +1,46 @@
+.elementExample {
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    color: #FFF;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  
+  .elementExample_one {
+    background-color: #8E44AD;
+    /* Quando utilizamos o float, o elemento é alocado no contexto de
+    flutuação, esse que é diferente do browser, por isso um elemento
+    acaba sobrepondo o outro */
+    float : left;
+  }
+
+  .elementExample_two {
+    background-color: #C0392B;
+    /* Toda vez que tivermos um <img> ou um elemento definido 
+    com display: inline ou display: inline-block após qualquer 
+    tag definida com a propriedade float: left ou float: right,
+     esses elementos se encaixam ao lado do elemento que está
+    flutuando. Ah! Se <img> ou o elemento com display: inline
+    ou display: inline-block não couber ao lado do elemento
+    que está flutuando, ele fica embaixo do elemento que contém 
+    a propriedade float */
+    color : black;
+    float : right;
+  }
+
+/* A propriedade overflow com o valor hidden, tem o poder de 
+esconder qualquer elemento filho que ultrapasse o tamanho do seu 
+pai, mas quando o pai não tem largura ou altura definida, ele se 
+preocupa em levar em consideração a altura e largura dos filhos, 
+ainda que estes estejam no novo contexto, por isso o background
+fica valendo, mesmo com esses filhos em novo contexto */
+
+  .wrap-elementExample {
+    background-color: #27ae60;
+    overflow: hidden;
+  }
+  
+  .elementParagraph {
+    clear: both;
+  }

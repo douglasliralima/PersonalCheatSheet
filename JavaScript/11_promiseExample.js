@@ -1,30 +1,29 @@
-function login(req, res, callback) {
-  // Uma promise é um "objeto" que promete que vai um dia pegar aquele resultado e quando pegar
-  // ele executará o "callback" passado no then, o negócio é que podemos fazer isso encadeado
-  // Assim podemos ter promises que vão depender de outras promises e assim por diante
-  // pegando tudo com um único erro se em algum lugar dessa corrente der bosta
-  // O parametro do then é o retorno da promise
-  User.findOne({email: req.body.email})
-    .then(function(user) {
-      return user.comparePassword(req.body.password)
-    })
-    .then(function(isMatch) {
-      // have to throw in order to break Promise chain
-      if (!isMatch) {
-        res.status(401).send('Incorrect password')
-        throw {earlyExit: true}
-      }
-      const payload = {id: user._id, email: user.email}
-      return jwt.sign(payload, config.secret, {})
-    })
-    .then(function(token) {
-      user.token = token
-      return user.save()
-    })
-    .then(function() {
-      res.json({token})
-    })
-    .catch(function(err) {
-      if (!err.earlyExit) callback(err)
-    })
-}
+//Uma promise é criada de forma bem intuitiva, como esse objeto, nele definimos um processamento que acontecerá de forma asyncrona
+let p = new Promise( (resolve, reject) => {
+  let a = 1 + 1;
+  if ( a = 1 ){
+    resolve("Executou! \o/")
+  }
+  else {
+    reject("Não foi dessa vez")
+  }
+})
+
+//Para ver qual o resultado de fato dessa promise, fazemos como abaixo
+p.then( (message) => {
+  console.log(message)
+})
+.catch((err) => {
+  console.log(err)
+})
+
+//Existem, claro, mais funcionalidades da promise, podemos esperar o resultado de um conjunto de promises para retornamos
+
+let p2 = new Promise.resolve(2);
+let p3 = new Promise.resolve(3);
+
+//Se uma das funções rejeitar, nada dá certo, caso a gente queira ver, se pelo menos um dá certo, usamos o allSettled
+Promise.all([p,p2,p3]).then(value => {
+  //Eles vem todos em um array
+  console.log(values)
+});

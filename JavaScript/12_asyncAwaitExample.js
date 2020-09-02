@@ -1,7 +1,6 @@
-// Para fazer códigos assyncrono mais fácil e rapido podemos definir uma função como asyncrona
-// fazendo isso faz o javascript entender que é para essa função ser executada como uma "thread"
-// com isso temos acesso ao operador await, que vai eixar essa função async congelada até o 
-// resultado voltar
+// Para fazer códigos assyncrono mais fácil, evitando um callback hell e um grande encadeamento, 
+// podemos definir uma função como asyncrona, fazendo isso o javascript entende que é para essa função ser executada como uma "thread"
+// com isso temos acesso ao operador await, que vai deixar essa função async congelada até o resultado voltar
 
 async function login(req, res, callback) {
   try {

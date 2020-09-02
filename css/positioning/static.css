@@ -1,0 +1,4 @@
+h1 {
+    /* Por padrão todo elemento vem com esse posicionamento */
+    position: static;
+}

@@ -1,0 +1,31 @@
+.example {
+    color: #FFF;
+    /* Comportamento de texto justificado */
+    text-align: justify;
+}
+
+/* Esse elemento after é porque a ultima linha no browser nunca é justificada, esse
+elemento então está apenas adicionado mais um elemento, com 100% de tamanho, logo todo os eleemntos anteriores
+estarão em uma linha */
+.example:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 0;
+}
+
+    .example-item {
+        width: 25%;
+        height: 150px;
+        /* Com o inline-block podemos tanto ter o comportamento de texto, quanto o tamanho e altura do nosso bloco */
+        display: inline-block;
+    }
+    .example-item_first {
+        background-color: #FAA116;
+    }
+    .example-item_second {
+        background-color: #57C7C3;
+    }
+    .example-item_third {
+        background-color: #3B97D3;
+    }

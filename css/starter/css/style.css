@@ -55,8 +55,7 @@ body {
     /*Essa tag está dizendo que a definição de background vai tentar preencher toda a box
     com esse tipo*/
     background-size: cover;
-    /*Isso aqui manterá a imagem posionada no topo do seu container não cortando o topo, mas sim
-    o centro ou a parte de baixo, a medida que a tela diminui*/
+    /*Isso aqui manterá a imagem posionada no topo do seu container de forma que ela remode-le para continuar lá*/
     background-position: top;
     /*Nos vamos especificar um poligono no formato de 4 tuplas x y do que estará visível na
     imagem, os pontos vão seguindo de forma horária, começando do superior esquerdo
@@ -73,9 +72,10 @@ body {
 .header__logo {
     height: 3.5rem;
 }
+
 .header__text-position{
     /*Esse posicionamento é em relação ao pai do elemento, logo o canto superior direito
-    estará a 40% do topo e a esquerda do pai*/
+    estará a 50% do topo e a esquerda do pai*/
     position: absolute;
     top : 50%;
     left : 50%;
@@ -84,6 +84,7 @@ body {
     transform: translate(-50%, -50%);
     text-align: center;
 }
+
 .heading-primary {
     color : #fff;
     text-transform: uppercase;

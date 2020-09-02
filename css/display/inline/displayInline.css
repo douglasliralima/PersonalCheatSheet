@@ -1,0 +1,20 @@
+.example {
+    color: #FFF;
+    /* Entretanto o inline dá a capacidade aos elementos para as mesmas palavras chaves possiveis no texto */
+    text-align: center;
+}
+
+.example-item {
+    /* Quando deixamos elementos com o display inline, damos a ele a propriedade de texto,
+    logo ele perde a capacidade de ter um tamanho e altura */
+    display: inline;
+}
+.example-item_first {
+    background-color: #FAA116;
+}
+.example-item_second {
+    background-color: #57C7C3;
+}
+.example-item_third {
+    background-color: #3B97D3;
+}

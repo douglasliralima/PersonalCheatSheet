@@ -22,6 +22,7 @@
     }   
   }
   
+  //Temos variáveis no lass tbm
   @mixin style-link-text($color){
     text-decoration : none;
     text-transform : uppercase;
@@ -42,7 +43,7 @@
   
   .navigation {
     list-style : none;
-    //Ao adicionar o float, nos dois filhos do nav, ele   colapsa e ele perde a referência de tamanho
+    //Ao adicionar o float, nos dois filhos do nav, ele colapsa e perde a referência de tamanho
     float : left;
     //Podemos fazer neasted selector diretamente
     li{

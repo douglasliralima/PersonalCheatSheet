@@ -1,0 +1,57 @@
+nav {
+    /* Esse aqui é usado quando queremos grudar algo no navegador
+    após um certo ponto, que especificamos com o top */
+    background-color: crimson;
+    position: sticky;
+    top : 10px;
+}
+
+#box { 
+    width : 400px;
+    height: 400px;
+    border: 5px solid black;
+    margin: 20px auto;
+    /* Deixei relative para o item 2 */
+    position : relative;
+}
+
+#fixed {
+    position : fixed;
+    top : 10%;
+    right : 10%;
+    width : 100px;
+    height: 100px;
+    background-color: darkolivegreen;
+
+}
+
+.item1, .item2 {
+    width : 150px;
+    height: 150px;
+}
+
+/* Importante lembrar que o plano cartesiano aqui é de computação gráfica */
+
+.item1 {
+    background-color: brown;
+    /* Ao dar a propriedade de posição como relativa, essa tem sua
+    posição agora relativa ao seu parente 'box' e ganha acesso ao uso
+    das palavras chaves, top, bottom, right, left */
+    position : relative;
+    left : 25%;
+    top : 25%;
+    /* Veja que nos sempre vamos deslocando a caixa a partir todos os pontos
+    do lado escolhido, mas sempre a partir de onde ele estaria de forma estática */
+}
+
+.item2 {
+    background-color: burlywood;
+    /* Essa posição também libera as palavras chaves top, left...
+    a diferença é que nessa, ao invés de translocar essa figura, ela
+    é catapultada para o ponto que descrevermos com as palavras chaves,
+    outra coisa importante é essa posição será correspondente ao ultimo pai da
+    herança que tem seu posicionamento como relativo */
+    position : absolute;
+    top : 0px;
+    right : 0px;
+}

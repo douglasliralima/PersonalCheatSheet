@@ -21,36 +21,34 @@ if (xhr.readyState === 4) {
 
      
 //Vamos para exemplificar usar a promise de uma execução AJAX
-     //Veja que a gente cria uma função factory de promises
-     var minhaPromise = function(){
-        return new Promise(function(resolve, reject){
-          var xhr = new XMLHttpRequest()
-  
-          xhr.open("GET", "https://api.github.com/users/douglasliralima")
-          xhr.send(null)
-  
-          xhr.onreadystatechange = function() {
-            if (xhr.readyState === 4) {
-              //Ela funciona igual a diferença é que agora retornamos na variavel 
-              //resolve em caso de dar bom e reject em caso de dar
-              if(xhr.status === 200){
-                resolve(JSON.parse(xhr.responseText))
-              } else {
-                reject("Erro de requisição")
-              }
-            }
-          }
-         });
-       }
-      
-      //Definida a minha promise, nos podemos realizar operações de if e else para a
-      //nossa requisição caso ela tenha dado certo (response vai invocar then) ou
-      //errado(reject vai invocar error)
-      
-      minhaPromise()
-              .then(function(response){
-                console.log(response)
-              })
-              .catch(function(error){
-                console.warn(error)
-              })
+//Veja que a gente cria uma função factory de promises
+var minhaPromise = function(){
+  return new Promise(function(resolve, reject){
+    var xhr = new XMLHttpRequest()
+
+    xhr.open("GET", "https://api.github.com/users/douglasliralima")
+    xhr.send(null)
+
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {
+        //Ela funciona igual a diferença é que agora retornamos na variavel 
+        //resolve em caso de dar bom e reject em caso de dar ruim
+        if(xhr.status === 200){
+          resolve(JSON.parse(xhr.responseText))
+        } else {
+          reject("Erro de requisição")
+        }
+      }
+    }
+  });
+};
+
+//Definida a minha promise, nos podemos realizar operações de if e else para a
+//nossa requisição caso ela tenha dado certo (response vai invocar then) ou
+//errado(reject vai invocar error)
+
+minhaPromise().then(function(response){
+          console.log(response)
+        }).catch(function(error){
+          console.warn(error);
+        });

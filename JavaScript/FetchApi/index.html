@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<!-- USANDO O LIVE SERVER PARA EVITAR O TRABALHO DE TER QUE CRIAR UM SERVER COM O NODEJS O FETCH FAZ REQUISIÇÕES PELO BROWSER POR ISSO O SERVIDOR É
+NECESSARIO -->
+
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>FetchApi</title>
+        <meta name="description" content="Essa é uma pequena página HTML onde está presente um exemplo do uso da API de fetch do Js">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="container">
+
+            <h1 class="display-4 mb-4">Fetch API Sandbox</h1>
+            <div class="d-flex">
+              <button class="btn btn-primary mr-4" id="getText">Get Text</button>
+              <button class="btn btn-success mr-4" id="getUsers">Get JSON</button>
+              <button class="btn btn-warning mr-4" id="getPosts">Get API DATA</button>
+            </div>
+            <hr>
+
+            <div id="output"></div>
+
+            <form id="addPost">
+
+              <div class="form-group">
+                <input type="text" id="title" class="form-control" placeholder="Title">
+              </div>
+
+              <div class="form-group">
+                <textarea id="body" class="form-control" placeholder="Body"></textarea>
+              </div>
+
+              <input type="submit" class="btn btn-secondary" value="Submit">
+            </form>
+
+          </div>
+
+        <script>
+
+            //-----------PEGAR UM TEXTO
+            function getText(){
+                //Nessa função nos passamos o nome de um arquivo ou uma url, qualquer coisa e o JS se vira para buscar
+                fetch("Exemplo.txt")
+                .then(function(response) {
+                    //O get desse objeto é simplesmente os status daquela requisição
+                    console.log(response);
+                    //Ele possui um método para acessarmos o texto em si, só que ele é uma promise
+                    return response.text()
+                })
+                //Lembrando que podemos usar arrow functions tbm
+                .then((value) => console.log(value))
+                .catch((err) => console.log(err));
+            }
+
+            //-----------PEGAR UM USUARIO
+            function getUsers(){
+                fetch('user.json')
+                .then((res) => res.json())
+                .then((data) => {
+                let output = '<h2 class="mb-4">Users</h2>';
+                data.forEach(function(user){
+                    output += `
+                    <ul class="list-group mb-3">
+                        <li class="list-group-item">ID: ${user.id}</li>
+                        <li class="list-group-item">Name: ${user.name}</li>
+                        <li class="list-group-item">Email: ${user.email}</li>
+                    </ul>
+                    `;
+                });
+                document.getElementById('output').innerHTML = output;
+                })
+            }
+            
+            //----------REALIZAR UM GET
+            function getPosts(){
+                //Fazer um get é fácil
+                fetch('https://jsonplaceholder.typicode.com/posts')
+                //entretanto precisamos pedir para a promise transformar esse dado em um json
+                .then((res) => res.json())
+                //aqui é só ele trabalhando encima do json fazendo uma criação intime do html
+                .then((data) => {
+                    let output = '<h2 class="mb-4">Posts</h2>';
+                    data.forEach(function(post){
+                    output += `
+                        <div class="card card-body mb-3">
+                        <h3>${post.title}</h3>
+                        <p>${post.body}</p>
+                        </div>
+                    `;
+                    });
+                    document.getElementById('output').innerHTML = output;
+                })
+            }
+
+            //------------REALIZAR UM POST
+            function addPost(e){
+                //Isso aqui é para ele não atualizar a tela
+                e.preventDefault();
+
+                let title = document.getElementById('title').value;
+                let body = document.getElementById('body').value;
+
+                fetch('https://jsonplaceholder.typicode.com/posts', {
+                    method:'POST',
+                    headers: {
+                    'Accept': 'application/json, text/plain, */*',
+                    'Content-type':'application/json'
+                    },
+                    //precisamos transformar o nosso json em string para o fetch entender
+                    body:JSON.stringify({title:title, body:body})
+                })
+                .then((res) => res.json())
+                .then((data) => console.log(data))
+            }
+
+            document.getElementById('getText').addEventListener('click', getText);
+            document.getElementById('getUsers').addEventListener('click', getUsers);
+            document.getElementById('getPosts').addEventListener('click', getPosts);
+            document.getElementById('addPost').addEventListener('submit', addPost);
+        </script>
+    </body>
+</html>

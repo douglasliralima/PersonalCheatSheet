@@ -1,0 +1,27 @@
+.example {
+    color: #FFF;
+    text-align: center;
+}
+
+    .example-item {
+        /* Deixando o display como block ele tenta ocupar toda a linha */
+        display: block;
+        /* Com isso nos podemos novamente ter a propriedade de altura e largura */
+        width: 33.333%;
+        height: 150px;
+    }
+    .example-item_first {
+        background-color: #FAA116;
+    }
+    .example-item_second {
+        background-color: #57C7C3;
+        /* Um valor auto tenta preencher tudo com o que sobra para aquele valor, aqui no caso o browser vai colocar todo o valor de margem
+        a esquerda, que sobrou daquela linha, depois de retirar o tamanho declarado daquele bloco */
+        margin-left: auto;
+    }
+    .example-item_third {
+        background-color: #3B97D3;
+        /* Se temos dos dois lados, ele faz novamente essa divisão para a gente, só que para os dois lados aqui */
+        margin-right: auto;
+        margin-left: auto;
+    }
