@@ -1,0 +1,50 @@
+/* Todo item no html é composto de 4 limitadores:
+ 1. Margin(top|left|right|bottom)
+ 2. Border(top|left|right|bottom|style|width|color)
+ 3. Padding(top|left|right|bottom)
+ 4. Content(text|image|video)
+ 
+ E esses limitadores literalmente definem as arestas de uma caixa, todo
+ elemento no html é uma caixa, mesmo se ele seja oval, no final, está dentro
+ de um elemento caixa
+ */
+
+.father_box {
+    background-color: brown;
+    font-size: 28px;
+    color : white;
+    text-align: center;
+
+    /* Content: width(largura) & height (altura) */
+    width: 500px;
+    height : 700px;
+
+    /* Para garantir que todos os filhos desse carinha, não extrapolem o conteudo, escondemos
+    o que passar dos limites que passamos */
+    overflow: hidden;
+    
+    /* Ṕor padrão esse padding é somado no tamanho total da caixa que contem aquele elemento
+    se quisermos que o padding fique restrito ao tamanho máximo passado para todo o content
+    usamos a propriedade */
+    box-sizing: border-box;
+
+    /* Margin: É literalmente um espaçamento fora dos domínios da box */
+    /* Um conceito importante é que margens de outros elementos não se somam, um acaba
+    entrando dentro do outro*/
+    margin-right: auto;
+    margin-left: auto;
+    
+}
+
+.content_box {
+    background-color: burlywood;
+    /* Padding : Preenchimento, margem interna */
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 70px;
+
+    /* Border: Esse é a aresta em fato da caixa, mais usado para arredondar a caixa */
+    /* Existem duas formas de escrever essas propriedades da caixa, da forma large-hand
+    como fizemos para o padding e também do jeito short hand q é esse resumo que temos abaixo */
+    border-left: 5px dotted rgba(255,255,255,0.5);    
+}
