@@ -1,0 +1,28 @@
+Chamamos de testes automatizados pedaços de código, sistemas, que testam outros pedaços de código...
+
+Existem no geral, três pedaços de código principalmente, são eles:
+
+Unit testes
+
+    -   Esses são os testes mais simples, eles testam um comportamento especifico e separado do sistema, o nosso code base pode ser composto
+    de um monte desses
+
+    -   Eles testam comportamento plenamente isolados um do outros
+
+Integration testes
+
+    -   Esses testam comportamentos que são compostos da união de vários comportamento, da integração desses.. Quando temos várias funções
+    sendo usadas em conjunto para algum fim
+
+    -   Esses testes são mais complexos que os unitários, pois é difícil criar algo que abarque toda a integração
+
+End-to-end tests:
+
+    -   Esses testes são criados para verificar o comportamento completo da UI do sistema, toda uma arvore DOM criada no navegador ou celular
+    eles testam se tudo funcionaria como desejado quando o cliente fosse utilizar nosso software
+
+    -   Esses testes são bastante complexos, pois são compostos de um workflow de ações e operações na UI que será renderizada e por isso
+    o codebase não conta com muito deles
+
+Detalhes muito melhores a serem entendidos podem se encontrar aqui:
+https://academind.com/learn/javascript/javascript-testing-introduction/
