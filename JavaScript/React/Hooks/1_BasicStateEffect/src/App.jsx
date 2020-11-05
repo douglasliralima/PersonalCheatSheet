@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 
-
+//Hooks basicamente é o desenvolvimento voltado a funções de callback que possuem um jsx relacionado
 function App() {
   //Aqui é a forma que criamos state, bem mais simples e "especializado"
   const [bullets, setBullets] = useState([]);
