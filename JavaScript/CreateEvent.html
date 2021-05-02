@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Creating Events</title>
+    <meta name="viewport" content="width=device-width">
+    <!--  -->
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1>Creating Events</h1>
+    <main>
+        <!-- add stuff here -->
+    </main>
+    <script>
+        // Existem duas principais formas de criar eventos customizados
+        //1. A partir do event apenas        
+        let born = new Event('born');
+
+        //2. A partir do CustomEvent, nele, nos podemos passar dentro de detail, qualquer informação que queiramos que seja passada ao evento 
+        let died = new CustomEvent('died', {detail:{time:Date.now()}});
+        
+        document.addEventListener('DOMContentLoaded', function (){
+            //Aqui nos temos simplesmente um seletor do elemento main e adição de dois paragrafospela função addParagraph
+            let m = document.querySelector('main');
+            addParagraph(m, 'This is a paragraph.');
+            addParagraph(m, 'A new Star Wars movie is coming soon.');
+            // Podemos adicionar funcionalidades a eventos já conhecidos pelo DOM, como o de click, para remover um paragrafo
+            m.addEventListener('click', function(ev){
+                removeParagraph(m, m.firstElementChild);
+            })
+        });
+
+        //Funções que serão passadas aos eventos    
+        function wasBorn(ev){
+            console.log(ev.type, ev.target);
+        }
+
+        function hasDied(ev){
+            // Veja que aqui temos acesso ao detail também e o que quer que tenha sido passado a ele
+            console.log(ev.type, ev.target, ev.detail.time);
+            //remove the listeners
+            ev.target.removeEventListener('born', wasBorn);
+            ev.target.removeEventListener('died', hasDied);
+        }
+        
+        function addParagraph(parent, txt){
+            //Add o texto para um <p></p>
+            let p = document.createElement('p');
+            p.textContent = txt;
+            //Aqui nos criamos listeners para os eventos
+            p.addEventListener('born', wasBorn);
+            p.addEventListener('died', hasDied);
+            //Aqui lançamos o evento com o objeto que criamos
+            p.dispatchEvent(born)
+            //add to screen
+            parent.appendChild(p);
+        }
+
+        function removeParagraph(parent, p){
+            //Aqui lançamos o evento com o objeto que criamos
+            p.dispatchEvent(died);
+            //remove element from screen
+            parent.removeChild(p);
+        }
+        
+    </script>
+</body>
+</html>
