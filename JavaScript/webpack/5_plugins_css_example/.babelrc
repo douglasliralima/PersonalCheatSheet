@@ -1,0 +1,6 @@
+// Nesse arquivo configuramos o babel, nesse caso ativamos o preset de plugin q foi instalado
+{
+    "presets": [
+        "@babel/env"
+    ]
+}
