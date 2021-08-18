@@ -1,13 +1,11 @@
 var express = require("express")
 
-var body_parser = require("body-parser");
 
 let app = express();
 
 //Precisamos passar algum interpretador de corpo de requisição, para conseguirmos ter acesso
 //no .body o json(VEJA REQUEST)
-// acho q n precisa mais disso
-app.use(body_parser.json()) 
+app.use(express.json()); 
 
 // app.METHOD(PATH, CALLBACKHANDLER)
 app.get("/teste", function(response, request){

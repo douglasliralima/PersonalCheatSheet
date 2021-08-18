@@ -15,6 +15,7 @@ myName = 100;
 const MyConstantSister = "Isabella"; // Só pode ter 1 referência, até o fim
 //Caso vc tenha um objeto ou uma lista, a referência a ela continuará a mesma, msm se colocarmos mais valores nela
 
+//Let são variáveis locais, elas tem o escopo de seu bloco de fechamento {} como é normalmente
 let MyScopeVar = 40;
 
 //funções também sofrem efeito de hosting
