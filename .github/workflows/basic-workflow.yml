@@ -14,7 +14,6 @@ on:
   workflow_dispatch:
     inputs:
         name:
-          type: choice
           description: Commit author
           default: 'douglas'
 
