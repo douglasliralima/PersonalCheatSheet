@@ -16,6 +16,12 @@ class Circle implements Shape {
   num get area => pi * pow(radius, 2);
 }
 
+// every class defines an interface
+class CircleMock implements Circle {
+  num area = 0;
+  num radius = 0;
+}
+
 class Square implements Shape {
   final num side;
   Square(this.side);
