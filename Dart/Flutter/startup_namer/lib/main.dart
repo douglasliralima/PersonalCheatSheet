@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 
+// This is the main app of Flutter, it basically exec some widget
 void main() {
   runApp(const MyApp());
 }
